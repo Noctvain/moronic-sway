@@ -1,0 +1,75 @@
+@define-color bg      #282828;
+@define-color bg-alt  #1a1818;
+@define-color brown   #302b2a;
+@define-color black   #000000;
+@define-color fg      #ebdbb2;
+@define-color red     #cc241d;
+@define-color green   #98971a;
+@define-color yellow  #d79921;
+@define-color blue    #458588;
+@define-color purple  #b16286;
+@define-color aqua    #689d6a;
+@define-color orange  #d65d0e;
+@define-color gray    #a89984;
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+#waybar {
+  border-radius: 15px;
+  margin: 10px;
+  color: @fg;
+  background-color: rgba(26, 24, 24, 0.5);
+}
+#workspaces button {
+  background-color: transparent;
+  color: @fg;
+}
+#workspaces button.focused {
+  background-color: @brown;
+  color: @yellow;
+}
+#workspaces button.urgent {
+  background-color: @red;
+}
+#temperature.critical {
+  color: @red;
+}
+#cava {
+  color: @yellow;
+}
+#bluetooth.on {
+  color: @fg;
+  border-bottom: 2px solid @blue;
+}
+#bluetooth.off {
+  color: @gray;
+  border-bottom: 2px solid @gray;
+}
+#bluetooth.connected {
+  color: @blue;
+  border-bottom: 2px solid @blue;
+}
+#wireplumber {
+  border-bottom: 2px solid @green;
+}
+#temperature,
+#cpu {
+  border-bottom: 2px solid @red;
+}
+#tray {
+  border-bottom: 2px solid @brown;
+}
+
+#language,
+#wireplumber,
+#temperature,
+#cpu,
+#bluetooth,
+#tray {
+  padding: 0px 5px;
+}
