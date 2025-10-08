@@ -1,6 +1,6 @@
 @define-color bg      #282828;
-@define-color bg-alt  #1a1818;
 @define-color brown   #302b2a;
+@define-color crust   #1a1818;
 @define-color black   #000000;
 @define-color fg      #ebdbb2;
 @define-color red     #cc241d;
@@ -19,14 +19,39 @@
   padding: 0;
   margin: 0;
 }
+
 #waybar {
-  border-radius: 15px;
-  margin: 10px;
+  border-radius: 0;
+  margin: 0;
   color: @fg;
-  background-color: rgba(26, 24, 24, 0.5);
+  background-color: @crust;
 }
+
+.modules-right {
+  padding-left: 5px;
+  border-radius: 0 0 0 10px;
+  background: @black;
+}
+
+.modules-center {
+  padding: 0 15px;
+  border-radius: 0 0 10px 10px;
+  background: @black;
+}
+
+.modules-left {
+  padding-right: 5px;
+  border-radius: 0 0 10px 0;
+  background: @black;
+}
+
 #workspaces button {
   background-color: transparent;
+  padding: 0 5px;
+  color: @yellow;
+  border-radius: 10px 0 10px 0;
+}
+#workspaces button.empty {
   color: @fg;
 }
 #workspaces button.focused {
@@ -36,33 +61,53 @@
 #workspaces button.urgent {
   background-color: @red;
 }
+
 #temperature.critical {
   color: @red;
 }
-#cava {
-  color: @yellow;
+
+#workspaces {
+  padding: 0 2px;
+  border-right: 2px solid @crust;
+  border-bottom-right-radius: 10px;
+}
+
+#custom-menu {
+  padding: 0 10px;
+  color: @blue;
+}
+
+#custom-power,
+#custom-quit,
+#custom-lock,
+#custom-reboot {
+  padding: 0 12px;
+}
+
+#bluetooth {
+  color: @gray;
+  border-left: 2px solid @crust;
+  border-bottom-left-radius: 10px;
 }
 #bluetooth.on {
   color: @fg;
-  border-bottom: 2px solid @blue;
-}
-#bluetooth.off {
-  color: @gray;
-  border-bottom: 2px solid @gray;
+  border-left: 2px solid @blue;
+  border-bottom-left-radius: 10px;
 }
 #bluetooth.connected {
   color: @blue;
-  border-bottom: 2px solid @blue;
+  border-left: 2px solid @blue;
+  border-bottom-left-radius: 10px;
 }
+
 #wireplumber {
-  border-bottom: 2px solid @green;
+  border-left: 2px solid @yellow;
+  border-bottom-left-radius: 10px;
 }
-#temperature,
+
 #cpu {
-  border-bottom: 2px solid @red;
-}
-#tray {
-  border-bottom: 2px solid @brown;
+  border-left: 2px solid @red;
+  border-bottom-left-radius: 10px;
 }
 
 #language,
@@ -71,5 +116,5 @@
 #cpu,
 #bluetooth,
 #tray {
-  padding: 0px 5px;
+  padding: 0px 8px;
 }
