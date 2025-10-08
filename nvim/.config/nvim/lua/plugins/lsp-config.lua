@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver" }, -- Note: "ts_ls" was corrected to "tsserver"
+        ensure_installed = { "lua_ls", "ts_ls" },
       })
     end,
   },
@@ -18,7 +18,6 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- Define configurations using vim.lsp.config
       vim.lsp.config('lua_ls', {
         capabilities = capabilities,
         filetypes = { 'lua' },
@@ -31,7 +30,7 @@ return {
         filetypes = { 'html' },
       })
 
-      vim.lsp.config('tsserver', { -- Note: "ts_ls" was corrected to "tsserver"
+      vim.lsp.config('ts_ls', {
         capabilities = capabilities,
         filetypes = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
       })
@@ -39,7 +38,7 @@ return {
       -- Enable the configs
       vim.lsp.enable('lua_ls')
       vim.lsp.enable('html')
-      vim.lsp.enable('tsserver')
+      vim.lsp.enable('ts_ls')
 
       -- Set up keymaps after LSP attaches to a buffer
       vim.api.nvim_create_autocmd('LspAttach', {

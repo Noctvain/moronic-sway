@@ -10,7 +10,7 @@ bar {
 }
 
 # Фон
-exec_always swaybg -i ~/Pictures/nasa.png -m fill
+exec_always swaybg -i ~/Pictures/space.png -m fill
 
 # Розкладка клавіатури (setxkbmap → input)
 input * {

@@ -1,16 +1,4 @@
-@define-color bg      #282828;
-@define-color brown   #302b2a;
-@define-color crust   #1a1818;
-@define-color black   #000000;
-@define-color fg      #ebdbb2;
-@define-color red     #cc241d;
-@define-color green   #98971a;
-@define-color yellow  #d79921;
-@define-color blue    #458588;
-@define-color purple  #b16286;
-@define-color aqua    #689d6a;
-@define-color orange  #d65d0e;
-@define-color gray    #a89984;
+@import url("colors.css");
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
@@ -23,52 +11,58 @@
 #waybar {
   border-radius: 0;
   margin: 0;
-  color: @fg;
-  background-color: @crust;
+  color: @fg1;
+  background-color: transparent;
 }
 
 .modules-right {
-  padding-left: 5px;
   border-radius: 0 0 0 10px;
-  background: @black;
+  background: @bg0;
 }
 
 .modules-center {
   padding: 0 15px;
   border-radius: 0 0 10px 10px;
-  background: @black;
+  background: @bg0;
 }
 
 .modules-left {
-  padding-right: 5px;
   border-radius: 0 0 10px 0;
-  background: @black;
+  background: @bg0;
 }
 
 #workspaces button {
   background-color: transparent;
-  padding: 0 5px;
-  color: @yellow;
+  padding: 0 2px;
+  color: @fg1;
   border-radius: 10px 0 10px 0;
 }
 #workspaces button.empty {
-  color: @fg;
+  color: @gray;
 }
 #workspaces button.focused {
-  background-color: @brown;
-  color: @yellow;
+  background-color: @bg2;
+  color: @fg1;
 }
 #workspaces button.urgent {
-  background-color: @red;
+  background-color: @red2;
 }
 
 #temperature.critical {
-  color: @red;
+  color: @red2;
 }
 
 #workspaces {
   padding: 0 2px;
-  border-right: 2px solid @crust;
+  border-right: 2px solid @gray;
+  border-bottom-right-radius: 10px;
+  border-left: 2px solid @gray;
+  border-top-left-radius: 10px;
+}
+
+#language {
+  color: @fg1;
+  border-right: 2px solid @gray;
   border-bottom-right-radius: 10px;
 }
 
@@ -81,12 +75,14 @@
 #custom-quit,
 #custom-lock,
 #custom-reboot {
+  border-bottom: 2px solid @gray;
+  margin: 0 2px;
   padding: 0 12px;
 }
 
 #bluetooth {
   color: @gray;
-  border-left: 2px solid @crust;
+  border-left: 2px solid @gray;
   border-bottom-left-radius: 10px;
 }
 #bluetooth.on {
@@ -100,13 +96,8 @@
   border-bottom-left-radius: 10px;
 }
 
-#wireplumber {
-  border-left: 2px solid @yellow;
-  border-bottom-left-radius: 10px;
-}
-
-#cpu {
-  border-left: 2px solid @red;
+#wireplumber, #cpu, #tray {
+  border-left: 2px solid @gray;
   border-bottom-left-radius: 10px;
 }
 
