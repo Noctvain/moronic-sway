@@ -1,37 +1,25 @@
-/* === Base Backgrounds === */
-@define-color bg0   #16161D; /* sumiInk0 – головний фон */
-@define-color bg1   #1F1F28; /* sumiInk3 – панелі, контейнери */
-@define-color bg2   #2A2A37; /* sumiInk4 – легкий контраст */
-@define-color bg3   #363646; /* sumiInk5 – ще виразніший фон */
+@define-color bg #1d1f21;
+@define-color fg #c5c8c6;
 
-/* === Foregrounds === */
-@define-color fg0   #C8C093; /* oldWhite – основний текст */
-@define-color fg1   #DCD7BA; /* fujiWhite – яскравий текст */
-@define-color fg2   #727169; /* fujiGray – коментарі, вторинний текст */
+@define-color tbg     rgba(29, 31, 33, 0.6);
+@define-color atbg    rgba(29, 31, 33, 0.8);
 
-/* === Accents === */
-@define-color red     #C4746E; /* м’який червоний */
-@define-color red2    #E82424; /* samuraiRed – попередження */
-@define-color green   #76946A; /* autumnGreen – позитив */
-@define-color yellow  #C4B28A; /* dragonYellow – акцент */
-@define-color orange  #B6927B; /* теплий помаранчевий */
-@define-color aqua    #7AA89F; /* waveAqua2 – акцент aqua */
-@define-color teal    #6A9589; /* waveAqua1 – приглушений акцент */
-@define-color blue    #7E9CD8; /* crystalBlue – посилання/активні */
-@define-color violet  #957FB8; /* oniViolet – декоративний */
-@define-color gray    #625E5A; /* м’який сірий, для роздільників */
+@define-color black   #1d1f21;
+@define-color red     #cc6666;
+@define-color green   #b5bd68;
+@define-color yellow  #f0c674;
+@define-color blue    #81a2be;
+@define-color magenta #b294bb;
+@define-color cyan    #8abeb7;
+@define-color white   #c5c8c6;
+@define-color gray    #969896;
+@define-color dGray   #373b41;
 
-/* === Special Highlights === */
-@define-color warn    #FF9E3B; /* roninYellow – попередження */
-@define-color info    #7FB4CA; /* springBlue – інфо */
-@define-color ok      #87A987; /* підтвердження */
-
-/* === Git / Diff === */
-@define-color diffAdd   #2B3328; /* winterGreen */
-@define-color diffChange #49443C; /* winterYellow */
-@define-color diffDel    #43242B; /* winterRed */
-
-/* === Popup / Float BG === */
-@define-color popup0 #223249;
-@define-color popup1 #2D4F67;
+@define-color bright-red     #d54e53;
+@define-color bright-green   #b9ca4a;
+@define-color bright-yellow  #e7c547;
+@define-color bright-blue    #7aa6da;
+@define-color bright-magenta #c397d8;
+@define-color bright-cyan    #70c0b1;
+@define-color bright-white   #eaeaea;
 

@@ -1,0 +1,42 @@
+@import url("/home/noct/.config/waybar/colors.css");
+
+* {
+  font-family: JetBrainsMono;
+  color: @fg;
+}
+
+#window {
+  background: @atbg;
+  margin: auto;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid @gray;
+}
+
+#input {
+  background-color: @dGray;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+#outer-box {
+  padding: 10px;
+}
+
+#img {
+  margin-right: 5px;
+}
+
+#entry {
+  padding: 5px;
+}
+
+#entry:selected {
+  background-color: @dGray;
+  border-left: 1px solid @fg;
+}
+
+#text {
+  margin: 2px;
+}

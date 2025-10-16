@@ -11,30 +11,30 @@
 #waybar {
   border-radius: 0;
   margin: 0;
-  color: @fg1;
+  color: @fg;
   background-color: transparent;
 }
 
 .modules-right {
   border-radius: 0 0 0 10px;
-  background: @bg0;
+  background: @bg;
 }
 
 .modules-center {
   padding: 0 15px;
   border-radius: 0 0 10px 10px;
-  background: @bg0;
+  background: @bg;
 }
 
 .modules-left {
   border-radius: 0 0 10px 0;
-  background: @bg0;
+  background: @bg;
 }
 
 #workspaces button {
   background-color: transparent;
   padding: 0 2px;
-  color: @fg1;
+  color: @fg;
   border-radius: 10px 0 10px 0;
 }
 #workspaces button.empty {
@@ -42,21 +42,21 @@
 }
 #workspaces button.focused {
   background-color: @bg2;
-  color: @fg1;
+  color: @fg;
 }
 #workspaces button.urgent {
-  background-color: @red2;
+  background-color: @red;
 }
 
 #temperature.critical {
-  color: @red2;
+  color: @red;
 }
 
 #workspaces {
   padding: 0 2px;
-  border-right: 2px solid @gray;
+  border-right: 2px solid @dGray;
   border-bottom-right-radius: 10px;
-  border-left: 2px solid @gray;
+  border-left: 2px solid @dGray;
   border-top-left-radius: 10px;
 }
 
@@ -81,8 +81,8 @@
 }
 
 #bluetooth {
-  color: @gray;
-  border-left: 2px solid @gray;
+  color: @dGray;
+  border-left: 2px solid @dGray;
   border-bottom-left-radius: 10px;
 }
 #bluetooth.on {
@@ -99,6 +99,16 @@
 #wireplumber, #cpu, #tray {
   border-left: 2px solid @gray;
   border-bottom-left-radius: 10px;
+}
+
+#custom-notify.none {
+  padding: 0 10px;
+  color: @fg;
+}
+
+#custom-notify.dnd-none {
+  padding: 0 10px;
+  color: @dGray;
 }
 
 #language,

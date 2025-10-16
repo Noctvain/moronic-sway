@@ -73,10 +73,10 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # Launcher
-bindsym $mod+r exec rofi -show drun
+bindsym $mod+r exec wofi --show drun
 
 # Lock / Suspend
-bindsym $mod+x exec swaylock -i ~/Pictures/finalizer.png
+bindsym $mod+x exec swaylock -i ~/Pictures/Kanawaga-dark.png
 bindsym $mod+z exec systemctl suspend
 
 # File manager

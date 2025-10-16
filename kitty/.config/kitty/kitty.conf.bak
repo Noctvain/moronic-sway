@@ -1,7 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# Kanagawa_dragon
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -764,7 +764,7 @@ cursor_trail_start_threshold 2
 #: because kitty is so fast that partial screen updates will be drawn.
 #: This setting is ignored when the input buffer is almost full.
 
-# sync_to_monitor yes
+sync_to_monitor no
 
 #: Sync screen updates to the refresh rate of the monitor. This
 #: prevents screen tearing

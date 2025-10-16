@@ -1,0 +1,50 @@
+@import url("/home/noct/.config/waybar/colors.css");
+
+.control-center {
+  border-radius: 16px;
+  background-color: @tbg;
+}
+
+.widgets > .widget,
+.widget-mpris > carouselindicatordots,
+.widget-mpris > box > button {
+  background-color: @bg;
+  border-radius: 16px;
+  padding: 8px;
+  border: 1px solid @gray;
+}
+
+.control-center-list-placeholder {
+  padding: 16px;
+}
+
+.notification-group {
+  border-radius: 16px;
+  padding: 8px;
+  background-color: @tbg;
+}
+
+.widget.widget-mpris {
+  border: none;
+  padding: 0;
+}
+
+.widget.widget-mpris > carouselindicatordots {
+  padding: 4px 6px;
+  margin-top: 8px;
+}
+
+.widget-mpris > box > button:hover {
+  background: rgba(46, 46, 46, 1);
+}
+
+.widget-mpris-player {
+  border-radius: 16px;
+  border: 1px solid @gray;
+  margin: 8px;
+}
+
+.widget-mpris-player:only-child {
+  margin: 0;
+}
+
