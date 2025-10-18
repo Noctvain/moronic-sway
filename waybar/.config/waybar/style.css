@@ -1,5 +1,6 @@
 @import url("colors.css");
 
+/* Базові стилі */
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 13px;
@@ -8,6 +9,7 @@
   margin: 0;
 }
 
+/* Waybar */
 #waybar {
   border-radius: 0;
   margin: 0;
@@ -15,20 +17,31 @@
   background-color: transparent;
 }
 
+/* Плавний перехід для всіх елементів */
+#waybar *,
+#waybar button {
+  transition: all 0.2s ease;
+}
+
+/* Модулі */
+.modules-left,
+.modules-center,
 .modules-right {
-  border-radius: 0 0 0 10px;
   background: @bg;
+  border-radius: 0;
 }
 
-.modules-center {
-  padding: 0 15px;
-  border-radius: 0 0 10px 10px;
-  background: @bg;
-}
+.modules-left { border-radius: 0 0 10px 0; }
+.modules-center { padding: 0 15px; border-radius: 0 0 10px 10px; }
+.modules-right { border-radius: 0 0 0 10px; }
 
-.modules-left {
-  border-radius: 0 0 10px 0;
-  background: @bg;
+/* Кнопки workspace */
+#workspaces {
+  padding: 0 2px;
+  border-left: 2px solid @dGray;
+  border-right: 2px solid @dGray;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 #workspaces button {
@@ -37,85 +50,77 @@
   color: @fg;
   border-radius: 10px 0 10px 0;
 }
-#workspaces button.empty {
-  color: @gray;
-}
-#workspaces button.focused {
-  background-color: @bg2;
-  color: @fg;
-}
-#workspaces button.urgent {
-  background-color: @red;
+
+#workspaces button.empty { color: @gray; }
+#workspaces button.focused { background-color: @bg2; color: @fg; }
+#workspaces button.urgent { background-color: @red; }
+
+/* Hover ефект для всіх кнопок power/quit/lock/reboot і меню/notify */
+
+#custom-menu:hover,
+#custom-notify:hover {
+  background-color: @dGray;
 }
 
-#temperature.critical {
-  color: @red;
-}
-
-#workspaces {
-  padding: 0 2px;
-  border-right: 2px solid @dGray;
-  border-bottom-right-radius: 10px;
-  border-left: 2px solid @dGray;
-  border-top-left-radius: 10px;
-}
-
-#language {
-  color: @fg1;
-  border-right: 2px solid @gray;
-  border-bottom-right-radius: 10px;
-}
-
-#custom-menu {
-  padding: 0 10px;
-  color: @blue;
-}
-
-#custom-power,
-#custom-quit,
-#custom-lock,
-#custom-reboot {
+#custom-power:hover,
+#custom-quit:hover,
+#custom-lock:hover,
+#custom-reboot:hover {
   border-bottom: 2px solid @gray;
-  margin: 0 2px;
-  padding: 0 12px;
 }
 
-#bluetooth {
-  color: @dGray;
-  border-left: 2px solid @dGray;
-  border-bottom-left-radius: 10px;
-}
-#bluetooth.on {
-  color: @fg;
-  border-left: 2px solid @blue;
-  border-bottom-left-radius: 10px;
-}
-#bluetooth.connected {
-  color: @blue;
-  border-left: 2px solid @blue;
-  border-bottom-left-radius: 10px;
-}
+#custom-menu:hover { border-radius: 0 0 10px 0; }
+#custom-power:hover,
+#custom-quit:hover,
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-notify:hover { border-radius: 0 0 0 10px; }
+#tray:hover { border-radius: 0 10px 0 10px; }
 
-#wireplumber, #cpu, #tray {
-  border-left: 2px solid @gray;
-  border-bottom-left-radius: 10px;
-}
-
-#custom-notify.none {
-  padding: 0 10px;
-  color: @fg;
-}
-
-#custom-notify.dnd-none {
-  padding: 0 10px;
-  color: @dGray;
-}
-
+/* Padding для модулів */
 #language,
 #wireplumber,
 #temperature,
 #cpu,
 #bluetooth,
 #tray {
-  padding: 0px 8px;
+  padding: 0 8px;
 }
+
+/* Bluetooth */
+#bluetooth {
+  color: @dGray;
+  border-left: 2px solid @dGray;
+  border-bottom-left-radius: 10px;
+}
+
+#bluetooth.on { color: @fg; border-left-color: @blue; }
+#bluetooth.connected { color: @blue; border-left-color: @blue; }
+
+/* Кнопки power/quit/lock/reboot */
+#custom-power,
+#custom-quit,
+#custom-lock,
+#custom-reboot {
+  padding: 0 10px;
+  margin-right: 4px;
+}
+
+/* Notify */
+#custom-notify {
+  padding: 0 10px;
+  margin-right: 2px;
+  color: @fg;
+}
+
+#custom-notify.dnd-none { color: @red; }
+
+/* Інші модулі */
+#temperature.critical { color: @red; }
+#language { color: @fg1; border-right: 2px solid @gray; border-bottom-right-radius: 10px; }
+#custom-menu { padding: 0 10px; margin: 0 2px; color: @blue; }
+#wireplumber,
+#cpu,
+#tray { border-left: 2px solid @gray; border-bottom-left-radius: 10px; }
+#bluetooth, #tray { border-left: 2px solid @gray; border-bottom-left-radius: 10px; }
+

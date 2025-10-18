@@ -29,13 +29,9 @@ exec swaync
 font pango:DejaVu Sans 10
 
 # === Кольори ===
-set $bg0  #1a1818
-set $bg1  #333333
+set $bg0  #969896
+set $bg1  #373b41
 set $bg2  #cc241d
-set $bg3  #d79921
-set $bg4  #458588
-set $bg5  #689d6a
-set $bg6  #a89984
 
 client.focused          $bg0 $bg0 $bg0 $bg0
 client.focused_inactive $bg1 $bg1 $bg1 $bg1
@@ -57,14 +53,21 @@ floating_modifier $mod
 tiling_drag $mod
 
 
-## === Borders and Gaps ===
+## === Window related ===
+
+focus_follows_mouse no
+
 default_border pixel 1
 default_floating_border pixel 1
 smart_borders on
 
+shadows disable
+corner_radius 10
+blur disable
+
 gaps inner 4
 gaps outer 4
-smart_gaps on
+smart_gaps off
 
 # Terminal
 bindsym $mod+Return exec kitty
@@ -76,7 +79,7 @@ bindsym $mod+q kill
 bindsym $mod+r exec wofi --show drun
 
 # Lock / Suspend
-bindsym $mod+x exec swaylock -i ~/Pictures/Kanawaga-dark.png
+bindsym $mod+x exec swaylock -i ~/Pictures/Kanagawa-dark.png
 bindsym $mod+z exec systemctl suspend
 
 # File manager
