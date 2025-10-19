@@ -13,7 +13,6 @@ alias grep='grep --color=auto'
 alias svim='sudoedit'
 alias pac='sudo pacman'
 alias pacs='sudo pacman -S --needed --noconfirm'
-alias syu='paru -Syu --noconfirm'
 alias grubupd='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias colors='nvim .config/waybar/colors.css'
 
