@@ -44,7 +44,7 @@
   "custom/lock": {
     "format": "",
     "tooltip-format": "Lock",
-    "on-click": "swaylock -i ~/Pictures/Kanagawa-dark.png",
+    "on-click": "swaylock",
   },
   "custom/reboot": {
     "format": "",

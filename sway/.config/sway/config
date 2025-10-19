@@ -78,9 +78,8 @@ bindsym $mod+q kill
 # Launcher
 bindsym $mod+r exec wofi --show drun
 
-# Lock / Suspend
-bindsym $mod+x exec swaylock -i ~/Pictures/Kanagawa-dark.png
-bindsym $mod+z exec systemctl suspend
+# SwayLock 
+bindsym $mod+x exec swaylock
 
 # File manager
 bindsym $mod+d exec nautilus
