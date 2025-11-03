@@ -1,6 +1,6 @@
 @import url("colors.css");
+/* For border radius: 1) top-left, 2) top-right 3) bot-right, 4) bot-left */
 
-/* Базові стилі */
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 13px;
@@ -8,6 +8,7 @@
   padding: 0;
   margin: 0;
 }
+
 
 /* Waybar */
 #waybar {
@@ -17,31 +18,30 @@
   background-color: transparent;
 }
 
-/* Плавний перехід для всіх елементів */
+/* Animations */
 #waybar *,
 #waybar button {
   transition: all 0.2s ease;
 }
 
-/* Модулі */
+
+/* Modules */
 .modules-left,
 .modules-center,
 .modules-right {
   background: @bg;
-  border-radius: 0;
 }
 
-.modules-left { border-radius: 0 0 10px 0; }
+.modules-left { border-radius: 0 0 10px 0; border-right: 2px solid @dGray; }
 .modules-center { padding: 0 15px; border-radius: 0 0 10px 10px; }
-.modules-right { border-radius: 0 0 0 10px; }
+.modules-right { border-radius: 0 0 0 10px; border-left: 2px solid @dGray;}
 
-/* Кнопки workspace */
+
+/* Workspaces */
 #workspaces {
-  padding: 0 2px;
   border-left: 2px solid @dGray;
   border-right: 2px solid @dGray;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px 0 10px 0;
 }
 
 #workspaces button {
@@ -51,12 +51,12 @@
   border-radius: 10px 0 10px 0;
 }
 
-#workspaces button.empty { color: @gray; }
-#workspaces button.focused { background-color: @bg2; color: @fg; }
+#workspaces button.empty { color: @dGray; }
+#workspaces button.focused { color: @fg; }
 #workspaces button.urgent { background-color: @red; }
 
-/* Hover ефект для всіх кнопок power/quit/lock/reboot і меню/notify */
 
+/* Hover effect */
 #custom-menu:hover,
 #custom-notify:hover {
   background-color: @dGray;
@@ -70,14 +70,14 @@
 }
 
 #custom-menu:hover { border-radius: 0 0 10px 0; }
-#custom-power:hover,
-#custom-quit:hover,
+#custom-power:hover, #custom-quit:hover,
 #custom-lock:hover,
 #custom-reboot:hover,
 #custom-notify:hover { border-radius: 0 0 0 10px; }
 #tray:hover { border-radius: 0 10px 0 10px; }
 
-/* Padding для модулів */
+
+/* Padding */
 #language,
 #wireplumber,
 #temperature,
@@ -87,17 +87,22 @@
   padding: 0 8px;
 }
 
+
 /* Bluetooth */
 #bluetooth {
   color: @dGray;
   border-left: 2px solid @dGray;
-  border-bottom-left-radius: 10px;
+  border-radius: 0 0 0 10px;
+}
+#bluetooth.on { 
+  color: @fg;
+}
+#bluetooth.connected {
+  color: @blue;
 }
 
-#bluetooth.on { color: @fg; border-left-color: @blue; }
-#bluetooth.connected { color: @blue; border-left-color: @blue; }
 
-/* Кнопки power/quit/lock/reboot */
+/* Powermenu buttons */
 #custom-power,
 #custom-quit,
 #custom-lock,
@@ -105,6 +110,7 @@
   padding: 0 10px;
   margin-right: 4px;
 }
+
 
 /* Notify */
 #custom-notify {
@@ -115,12 +121,17 @@
 
 #custom-notify.dnd-none { color: @red; }
 
-/* Інші модулі */
-#temperature.critical { color: @red; }
-#language { color: @fg1; border-right: 2px solid @gray; border-bottom-right-radius: 10px; }
-#custom-menu { padding: 0 10px; margin: 0 2px; color: @blue; }
-#wireplumber,
-#cpu,
-#tray { border-left: 2px solid @gray; border-bottom-left-radius: 10px; }
-#bluetooth, #tray { border-left: 2px solid @gray; border-bottom-left-radius: 10px; }
+/* Other */
+#temperature.critical {
+  color: @red;
+}
+#custom-menu {
+  padding: 0 10px;
+  margin: 0 2px;
+  color: @blue;
+}
+#wireplumber, #cpu {
+  border-radius: 0 0 0 10px; 
+  border-left: 2px solid @dGray;
+}
 

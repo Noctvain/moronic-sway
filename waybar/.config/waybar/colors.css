@@ -4,7 +4,7 @@
 @define-color tbg     rgba(29, 31, 33, 0.6);
 @define-color atbg    rgba(29, 31, 33, 0.8);
 
-@define-color black   #1d1f21;
+@define-color black   #000000;
 @define-color red     #cc6666;
 @define-color green   #b5bd68;
 @define-color yellow  #f0c674;
