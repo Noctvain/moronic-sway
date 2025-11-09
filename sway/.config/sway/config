@@ -1,34 +1,30 @@
-### === Основні параметри ===
+### === Mod button ===
 set $mod Mod4
 
-# Автозапуск програм
+# Autostart
 exec dex --autostart --environment sway
+exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id nm-applet
+exec swaync
 
-# Polybar → Waybar
+# Waybar
 bar {
     swaybar_command waybar
 }
 
-# Фон
-exec_always swaybg -i ~/Pictures/space.png -m fill
+# Background
+exec_always swaybg -i ~/Pictures/wlppr.jpg -m fill
 
-# Розкладка клавіатури (setxkbmap → input)
+# input
 input * {
     xkb_layout us,ua,ru
     xkb_options grp:alt_shift_toggle
 }
 
-# applets
-exec_always --no-startup-id blueman-applet
-exec_always --no-startup-id nm-applet
-
-# Сповіщення (mako або swaync)
-exec swaync
-
-# === Шрифти ===
+# === Font ===
 font pango:DejaVu Sans 10
 
-# === Кольори ===
+# === Colors ===
 set $bg0  #969896
 set $bg1  #373b41
 set $bg2  #cc241d
@@ -38,22 +34,19 @@ client.focused_inactive $bg1 $bg1 $bg1 $bg1
 client.unfocused        $bg1 $bg1 $bg1 $bg1
 client.urgent           $bg2 $bg2 $bg2 $bg2
 
-### === Аудіо / мікрофон ===
+### === Audio ===
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-### === Яскравість ===
+### === Brightness ===
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
-### === Основні гарячі клавіші ===
+## === Window related ===
 floating_modifier $mod
 tiling_drag $mod
-
-
-## === Window related ===
 
 focus_follows_mouse no
 
@@ -68,6 +61,13 @@ blur disable
 gaps inner 4
 gaps outer 4
 smart_gaps off
+
+bindsym $mod+g exec swaymsg gaps inner current toggle 0; swaymsg gaps outer current toggle 0
+bindsym $mod+Shift+g exec swaymsg gaps inner current toggle 4; swaymsg gaps outer current toggle 4
+
+#print screen
+bindsym $mod+Print exec grim -g "$(slurp)" ~/Pictures/scrnsht-$(date '+%Y%m%d-%H%M%S').png
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
 # Terminal
 bindsym $mod+Return exec kitty
