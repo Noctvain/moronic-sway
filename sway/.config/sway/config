@@ -60,10 +60,10 @@ blur disable
 
 gaps inner 4
 gaps outer 4
-smart_gaps off
 
-bindsym $mod+g exec swaymsg gaps inner current toggle 0; swaymsg gaps outer current toggle 0
-bindsym $mod+Shift+g exec swaymsg gaps inner current toggle 4; swaymsg gaps outer current toggle 4
+smart_gaps on
+bindsym $mod+g smart_gaps toggle
+bindsym $mod+b exec killall -SIGUSR1 waybar
 
 #print screen
 bindsym $mod+Print exec grim -g "$(slurp)" ~/Pictures/scrnsht-$(date '+%Y%m%d-%H%M%S').png
