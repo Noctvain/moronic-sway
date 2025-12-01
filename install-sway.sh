@@ -7,7 +7,7 @@ REPO_NAME="moronic-sway"
 cd ~
 
 is_paru_installed() {
-  pacman -Qi "paru" &> /dev/null
+  sudo pacman -Qi "paru" &> /dev/null
 }
 
 if ! is_paru_installed; then
